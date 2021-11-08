@@ -10,12 +10,11 @@ body {
     margin: 0;
 }
 
-#main {
+.section {
     display: flex;
     flex: 1;
 }
-
-#main > nav {
+nav {
     order: -1;
     padding-top: 15px;
     padding-left: 15px;
@@ -23,13 +22,17 @@ body {
     background: rgb(254, 153, 0)
 }
 
-#main > article {
+
+
+ article {
     flex: 1;
     order: -1;
-    text-align: center;
+    padding-top: 15px ;
+    padding-left: 15px;
+    justify-content: start;
 }
 
-#main > aside {
+ aside {
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
@@ -56,10 +59,10 @@ footer {
 
 
 @media screen and   (max-width: 620px ) {
-    #main {
+    section {
         flex-direction: column;
     }
-    #main > nav, aside {
+    section > nav, aside {
         height: 50px;
     }
 
