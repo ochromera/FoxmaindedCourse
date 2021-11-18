@@ -67,7 +67,6 @@ h1, h2 {
 @media screen and (min-width: 768px)  and (max-width: 991px) {
     .page-wrap {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
         width: auto;
     }
@@ -100,7 +99,6 @@ h1, h2 {
 @media not screen and  (max-width: 768px) and (orientation: landscape) {
     .page-wrap {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
         width: auto;
     }
@@ -130,7 +128,6 @@ h1, h2 {
 @media screen and (min-width: 992px)  and (max-width: 1200px) {
     .page-wrap {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
         width: auto;
     }
@@ -158,7 +155,6 @@ h1, h2 {
 
     .page-wrap {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
         width: auto;
         height: auto;
