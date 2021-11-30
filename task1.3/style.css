@@ -1,23 +1,49 @@
-
 * {
     margin: 0;
 }
 
 .container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     margin: 10% auto;
-    height: 400px;
-    width: 800px;
-    position: relative;
-    user-select: none;
-    background-color: darkgray;
     overflow: hidden;
+    user-select: none;
+    width: 800px;
+    height: 400px;
+}
+
+.slide, h1 {
+    margin-top: 230px;
+}
+
+.slide, p {
+    text-align: center;
+    font-size: 9pt;
+    margin-top: 15px;
+
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label span {
+    position: absolute;
+    font-size: 100pt;
+    left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .container .slide {
     position: absolute;
     width: inherit;
     height: inherit;
+    z-index: 1;
+    background: gray;
 }
 
 .prev, .next {
@@ -26,11 +52,10 @@
     position: absolute;
     top: 0;
     color: rgba(244, 244, 244, .9);
-    z-index: 99;
+    z-index: 6;
     transition: .45s;
     cursor: pointer;
     text-align: center;
-
 }
 
 .next {
@@ -41,33 +66,41 @@
     left: 0;
 }
 
-h1 {
-    margin-top: 10%;
-    text-align: center;
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    z-index: 10;
 }
 
-p {
-    text-align: center;
-    margin-top: 20%;
-    font-size: 9pt;
+.container input {
+    cursor: pointer;
 }
 
-label span {
-    position: absolute;
-    font-size: 100pt;
-    left: 40%;
-    top: 45%;
-    transform: translateY(-50%);
+#i1:checked ~#one,
+#i2:checked ~#two,
+#i3:checked ~#three
+    {z-index: 9; animation: scroll 1s ease-in-out;}
 
-}
 
-.slide {
-    z-index: -1;
-}
 
-#i1:checked ~ #one,
-#i2:checked ~ #two,
-#i3:checked ~ #three {
-    z-index: 9;
-    animation: scroll 0.5ms ease-in-out;
+#i1:checked ~ .slider-controls #dot1,
+#i2:checked ~ .slider-controls #dot2,
+#i3:checked ~ .slider-controls #dot3
+
+@keyframes slide {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    50% {
+        margin-left: 50%;
+        width: 200%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
 }
