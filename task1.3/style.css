@@ -5,7 +5,7 @@ html, body {
 }
 
 .carousel {
-    position: relative;
+    position: static;
     margin-top: 26px;
 }
 
@@ -14,25 +14,27 @@ html, body {
     height: 800px;
     overflow: hidden;
     width: 100%;
+
 }
 
-h4 {
+.carousel-item h4 {
+    width: 100%;
+    position: absolute;
+    margin: 21% auto;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9;
+
+}
+
+.carousel-item p {
     width: 100%;
     position: absolute;
     margin: 25% auto;
     text-align: center;
-    font-size: 27px;
-    color: rgba(255, 255, 255, 1);
-    font-family: 'Open Sans', sans-serif;
-    z-index: 9;
-}
-
-p {
-    width: 100%;
-    position: absolute;
-    margin: 28% auto;
-    text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     color: rgba(255, 255, 255, 1);
 }
 
@@ -43,7 +45,7 @@ p {
 }
 
 .carousel-item {
-    position: absolute;
+    position: static;
     opacity: 0;
     -webkit-transition: opacity 0.6s ease-out;
     transition: opacity 0.6s ease-out;
@@ -65,7 +67,7 @@ p {
     transform: translate(0, -50%);
     text-align: center;
     width: 40px;
-    z-index: 10;
+    z-index: 9;
 }
 
 .carousel-control.prev {
@@ -84,6 +86,7 @@ p {
 #carousel-2:checked ~ .control-2,
 #carousel-3:checked ~ .control-3 {
     display: block;
+
 }
 
 .carousel-indicators {
